@@ -1,0 +1,43 @@
+<?php
+use Drupal\Core\Database\Database;
+ 
+/**
+ * Implements hook_schema().
+ */
+function contact_us_schema(){
+    $schema['contacts'] = array(
+        'description' => 'The table for storing the contacts data.',
+        'fields' => array(
+            'id' => array(
+                'description' => 'The primary identifier for contact',
+                'type' => 'serial',
+                'not null' => TRUE,
+                'unsigned' => TRUE,
+            ),
+            'fullname' => array(
+                'description' => 'Full name',
+                'type' => 'varchar',
+                'length' => 255,
+                'not null' => TRUE,
+                'default' => '',
+            ),
+           'email' => array(
+                'description' => 'Email.',
+                'type' => 'varchar',
+                'length' => 255,
+                'not null' => TRUE,
+                'default' => '',
+            ),
+            'phone' => array(
+                'description' => 'phone',
+                'type' => 'varchar',
+                'length' => 255,
+                'not null' => TRUE,
+               
+            ),
+    
+        ),
+        'primary key' => array('id'),
+    );
+    return $schema;
+}

@@ -1,0 +1,24 @@
+contact_us.contactmanage:
+  path: '/contact-us-form'
+  defaults:
+    _title: 'Contacts record'
+    _controller: '\Drupal\contact_us\Controller\ContactController::manageContacts'
+  requirements:
+    _permission: 'access content'
+    
+contact_us.delete_contact_ajax:
+  path: '/delete/{cid}'
+  defaults:
+    _controller: '\Drupal\contact_us\Controller\ContactController::deleteContactAjax'
+    _title: 'Delete Contact'
+  requirements:
+    _permission: 'access content'
+
+contact_us.edit_contact_ajax:
+  path: '/edit/{cid}'
+  defaults:
+    _controller: '\Drupal\contact_us\Controller\ContactController::editContactAjax'
+    _title: 'Edit Contact'
+  requirements:
+    _permission: 'access content'
+    
